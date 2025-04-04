@@ -13,11 +13,12 @@ int main() {
     float Densidade_Populacional1 = (float) Populacao1 / Area1;
     float PIB_per_capita1 = (PIB1 * 1000000000) / Populacao1;
     float Super_Poder1 = Populacao1 + Area1 + PIB1 + Turismo1 + PIB_per_capita1 + (1/Densidade_Populacional1);
+    int jogador1;
 
     printf("Estado: %c\n", Estado);
     printf("Codigo: %s\n", Codigo);
     printf("Cidade: %s\n", Cidade);
-    printf("Populacao %ul\n", Populacao1);
+    printf("Populacao %u\n", Populacao1);
     printf("Area: %.2f km²\n", Area1);
     printf("PIB: %.2f bilhoes\n", PIB1);
     printf("Turismo: %d\n", Turismo1);
@@ -42,7 +43,7 @@ int main() {
     printf("Estado: %c\n", estado);
     printf("Codigo: %s\n", codigo);
     printf("Cidade: %s\n", cidade);
-    printf("Populacao %ul\n", populacao2);
+    printf("Populacao %u\n", populacao2);
     printf("Area: %.f km²\n", area2);
     printf("PIB: %.2f bilhoes\n", pib2);
     printf("Turismo: %d\n", turismo2);
@@ -52,48 +53,80 @@ int main() {
     
     printf("\n");
     
-    printf("Comparação de Cartas:\n");
+    printf("Duelo de Cartas:\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Pontos Turisticos\n");
+    printf("5. Densidade Demografica\n");
+    printf("Qual Atributo Usar?: ");
+    scanf("%d", &jogador1);
+    
+    switch (jogador1)
+    {
+    case 1:
+        printf("São Paulo - Rio de Janeiro\n");
+        printf("População:\n");
+        printf("São Paulo: 11895578\n");
+        printf("Rio de Janeiro: 6729894\n");
+        if(Populacao1 > populacao2)
+        printf("São Paulo venceu!\n");
+    else if (Populacao1 < populacao2)
+        printf("Rio de Janeiro venceu!\n");
+    else printf("Empate!\n");
+    break;
 
-    if (Populacao1 > populacao2) {
-        printf("População: Carta 1 venceu\n");
-    } else {
-        printf("População: Carta 2 venceu\n");
+    case 2:
+        printf("São Paulo - Rio de Janeiro\n");
+        printf("Área:\n");
+        printf("São Paulo: 1521.20 km²\n");
+        printf("Rio de Janeiro: 1200 km²\n");
+        if(Area1 > area2)
+        printf("São Paulo venceu!\n");
+    else if (Area1 < area2)
+        printf("Rio de Janeiro venceu\n");
+    else printf("Empate\n");
+    break;
+
+    case 3:
+        printf("São Paulo - Rio de Janeiro\n");
+        printf("PIB:\n");
+        printf("São Paulo: 857.62 bilhões\n");
+        printf("Rio de Janeiro: 400.00 bilhões\n");
+        if(PIB1 > pib2)
+        printf("São Paulo venceu!\n");
+    else if (PIB1 < pib2)
+        printf("Rio de Janeiro venceu\n");
+    else printf("Empate\n");
+    break;
+
+    case 4:
+    printf("São Paulo - Rio de Janeiro\n");
+    printf("Pontos Turisticos:\n");
+    printf("São Paulo: 36\n");
+    printf("Rio de Janeiro: 58\n");
+    if(Turismo1 > turismo2)
+    printf("São Paulo venceu!\n");
+    else if (Turismo1 < turismo2)
+    printf("Rio de Janeiro venceu\n");
+    else printf("Empate\n");
+    break;
+
+    case 5:
+    printf("São Paulo - Rio de Janeiro\n");
+    printf("Densidade Populacional:\n");
+    printf("São Paulo: 7819.86 hab/km²\n");
+    printf("Rio de Janeiro: 5608.25 hab/km²\n");
+    if(Densidade_Populacional1 < densidade_populacional2)
+    printf("São Paulo venceu!\n");
+    else if (Densidade_Populacional1 > densidade_populacional2)
+    printf("Rio de Janeiro venceu\n");
+    else printf("Empate\n");
+    break;
+
+    default:
+    printf("Opção Invalida!");
     }
-    
-    if (Area1 > area2) {
-        printf("Área: Carta 1 venceu\n");
-    } else {
-        printf("Área: Carta 2 venceu\n");
-    }
-    
-    if (PIB1 > pib2) {
-        printf("PIB: Carta 1 venceu\n");
-    } else {
-        printf("PIB: Carta 2 venceu\n");
-    }
-    
-    if (Turismo1 > turismo2) {
-        printf("Pontos Turísticos: Carta 1 venceu\n");
-    } else {
-        printf("Pontos Turísticos: Carta 2 venceu\n");
-    }
-    
-    if (Densidade_Populacional1 < densidade_populacional2) {
-        printf("Densidade Populacional: Carta 1 venceu\n");
-    } else {
-        printf("Densidade Populacional: Carta 2 venceu\n");
-    }
-    
-    if (PIB_per_capita1 > Pib_per_capita2) {
-        printf("PIB per Capita: Carta 1 venceu\n");
-    } else {
-        printf("PIB per Capita: Carta 2 venceu\n");
-    }
-    
-    if (Super_Poder1 > super_poder2) {
-        printf("Super Poder: Carta 1 venceu\n");
-    } else {
-        printf("Super Poder: Carta 2 venceu\n");
-    }
+
     return 0;
 }
